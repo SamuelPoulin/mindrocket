@@ -6,11 +6,11 @@ import 'package:flutter_workshop/pages/loginPage.dart';
 import 'package:flutter_workshop/pages/mainPage.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(Mindrocket());
 }
 
-class MyApp extends StatelessWidget {
-  var brightness = Brightness.light;
+class Mindrocket extends StatelessWidget {
+  final brightness = Brightness.dark;
 
   @override
   Widget build(BuildContext context) {

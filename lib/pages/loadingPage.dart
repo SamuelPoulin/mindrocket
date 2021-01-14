@@ -19,44 +19,46 @@ class _LoadingPageState extends State<LoadingPage> {
           (route) => false);
     });
 
-    return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset(
-                'assets/images/logo.png',
-                height: 75,
-              ),
-            ],
-          ),
-          SizedBox(height: 10),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                'Mindrocket',
-                style: Theme.of(context).textTheme.headline6,
-              )
-            ],
-          ),
-          SizedBox(height: 30),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(
-                height: 75,
-                width: 75,
-                child: Loading(
-                  indicator: BallScaleIndicator(),
-                  color: Theme.of(context).accentColor,
+    return SafeArea(
+      child: Scaffold(
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  'assets/images/logo.png',
+                  height: 75,
                 ),
-              )
-            ],
-          )
-        ],
+              ],
+            ),
+            SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Mindrocket',
+                  style: Theme.of(context).textTheme.headline6,
+                )
+              ],
+            ),
+            SizedBox(height: 30),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                  height: 75,
+                  width: 75,
+                  child: Loading(
+                    indicator: BallScaleIndicator(),
+                    color: Theme.of(context).accentColor,
+                  ),
+                )
+              ],
+            )
+          ],
+        ),
       ),
     );
   }
