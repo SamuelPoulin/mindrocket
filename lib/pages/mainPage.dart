@@ -5,8 +5,6 @@ import 'dart:math' as math;
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:loading/indicator/ball_pulse_indicator.dart';
-import 'package:loading/indicator/ball_scale_indicator.dart';
-import 'package:loading/indicator/ball_scale_multiple_indicator.dart';
 import 'package:loading/loading.dart';
 
 class MainPage extends StatefulWidget {
@@ -81,24 +79,29 @@ class _MainPageState extends State<MainPage> {
                         minHeight: 150,
                         maxHeight: 200),
                   ),
-                  SliverList(
-                    delegate: SliverChildBuilderDelegate((context, index) {
-                      return articles.length != 0
-                          ? NewsCard(
-                              article: articles[index],
-                            )
-                          : Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                  SizedBox(
-                                    width: 100,
-                                    child: Loading(
-                                      indicator: BallPulseIndicator(),
-                                      color: Theme.of(context).accentColor,
+                  SliverPadding(
+                    padding: EdgeInsets.only(bottom: 50),
+                    sliver: SliverList(
+                      delegate: SliverChildBuilderDelegate((context, index) {
+                        return articles.length != 0
+                            ? NewsCard(
+                                article: articles[index],
+                              )
+                            : Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                    SizedBox(
+                                      width: 100,
+                                      child: Loading(
+                                        indicator: BallPulseIndicator(),
+                                        color: Theme.of(context).accentColor,
+                                      ),
                                     ),
-                                  ),
-                                ]);
-                    }, childCount: articles.length != 0 ? articles.length : 1),
+                                  ]);
+                      },
+                          childCount:
+                              articles.length != 0 ? articles.length : 1),
+                    ),
                   ),
                 ],
               ),

@@ -24,13 +24,14 @@ class _NewsCardState extends State<NewsCard> {
             borderRadius: BorderRadius.circular(25),
             onTap: () => {},
             child: Container(
-              height: 220,
               width: MediaQuery.of(context).size.width * screenPercentage,
               child: Ink(
                 decoration: BoxDecoration(
                   boxShadow: [
                     BoxShadow(
-                        blurRadius: 10, color: Colors.black.withOpacity(0.1))
+                      blurRadius: 10,
+                      color: Colors.black.withOpacity(0.1),
+                    )
                   ],
                   borderRadius: BorderRadius.circular(25),
                   image: DecorationImage(
@@ -52,20 +53,23 @@ class _NewsCardState extends State<NewsCard> {
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15),
                               color: Theme.of(context).accentColor),
-                          child: Text(widget.article.newsSite,
-                              style: TextStyle(color: Colors.white)),
+                          child: Text(
+                            widget.article.newsSite,
+                            style: TextStyle(color: Colors.white),
+                          ),
                         ),
                       ],
+                    ),
+                    SizedBox(
+                      height: 75,
                     ),
                     Row(
                       children: [
                         Container(
-                          height: 95,
-                          // width: 335,
                           width: MediaQuery.of(context).size.width *
                               screenPercentage,
                           decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: Theme.of(context).cardColor,
                             borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(25),
                               bottomRight: Radius.circular(25),
@@ -81,7 +85,6 @@ class _NewsCardState extends State<NewsCard> {
                                     width: 310,
                                     child: Text(
                                       widget.article.title,
-                                      overflow: TextOverflow.ellipsis,
                                       style:
                                           Theme.of(context).textTheme.headline3,
                                     ),
@@ -101,14 +104,15 @@ class _NewsCardState extends State<NewsCard> {
                                       style:
                                           Theme.of(context).textTheme.bodyText1,
                                     ),
-                                  )
+                                  ),
                                 ],
-                              )
+                              ),
+                              SizedBox(height: 15),
                             ],
                           ),
                         ),
                       ],
-                    )
+                    ),
                   ],
                 ),
               ),
