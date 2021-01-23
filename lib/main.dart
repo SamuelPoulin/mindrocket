@@ -10,7 +10,7 @@ void main() {
 }
 
 class Mindrocket extends StatelessWidget {
-  final brightness = Brightness.dark;
+  final brightness = Brightness.light;
 
   @override
   Widget build(BuildContext context) {
